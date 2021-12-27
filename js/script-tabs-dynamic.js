@@ -3,6 +3,11 @@ nav = document.querySelector('.nav')
 
 let tabs = [
     {
+        title: 'Little nightmare',
+        src: 'sheets/4.png',
+        target: 'img-4'
+    },
+    {
         title:'Sakura redemption',
         src:'sheets/1.jpg',
         target:'img-1'
@@ -16,11 +21,6 @@ let tabs = [
         title: 'The mountains',
         src: 'sheets/3.jpg',
         target: 'img-3'
-    },
-    {
-        title: 'Little nightmare',
-        src: 'sheets/4.png',
-        target: 'img-4'
     },
 ]
 
