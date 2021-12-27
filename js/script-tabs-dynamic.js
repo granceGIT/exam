@@ -5,23 +5,28 @@ let tabs = [
     {
         title: 'Little nightmare',
         src: 'sheets/4.png',
-        target: 'img-4'
+        target: 'img-4',
+        maincolor: '#281864'
     },
     {
-        title:'Sakura redemption',
-        src:'sheets/1.jpg',
-        target:'img-1'
+        title: 'Sakura redemption',
+        src: 'sheets/1.jpg',
+        target: 'img-1',
+        maincolor: '#8a2be2'
     },
     {
         title: 'Sunset by the river',
         src: 'sheets/2.jpg',
-        target: 'img-2'
+        target: 'img-2',
+        maincolor:'#e2652b'
     },
     {
         title: 'The mountains',
         src: 'sheets/3.jpg',
-        target: 'img-3'
+        target: 'img-3',
+        maincolor: '#e2b12b'
     },
+    
 ]
 
 tabs.forEach(tab=>{
@@ -43,19 +48,24 @@ boxWithImage.classList.add('image-box__item')
 boxWithImage.classList.add('image-box__item_active')
 imageBox.append(boxWithImage)
 
-
+//Выбор картинки
 function choosePicture(e){
     clearTab()
     let currentPict = e.currentTarget
     currentPict.classList.add('nav__item_active')
     tabs.forEach((tab) => {
         if(currentPict.dataset.target == tab.target){
+            currentPict.style.backgroundColor = tab.maincolor
             boxWithImage.src = tab.src
             boxWithImage.alt = tab.title
         }
     })
 }
 
+//Очистка стиля вкладок
 function clearTab() {
-    [...nav.children].forEach(item => item.classList.remove('nav__item_active'))
+    [...nav.children].forEach(item => {
+        item.classList.remove('nav__item_active')
+        item.style.backgroundColor = ""
+    })
 }
